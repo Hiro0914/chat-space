@@ -1,22 +1,17 @@
--#.flash-box
-  グループを作成しました
 .wrapper
   = render partial: 'shared/chat_side'
   .chat-main
     .main-header
       .main-header__left-box
-        %h2.main-header__left-box__current-group current group
+        %h2.main-header__left-box__current-group 
+          = @group.name 
         %ul.main-header__left-box__member-list 
           Member：
           %li.main-header__left-box__member-list__member 
-            name
+            = @group.users.name #仮置き
       .main-header__edit-btn Edit
     .messages
-      #message 
-        .messages__upper-info
-          .messages__upper-info__talker test-user
-          %p.messages__upper-info__date 2019/7/26
-        %p.messages-text hello
+      = render partial: 'message', collection: @messages
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
@@ -25,7 +20,3 @@
             = fa_icon 'picture-o', class: 'icon'
             = f.file_field :image, class: 'hidden'
         = f.submit 'Send', class: 'form__submit'
-
-
-/ %h1 Messages#index
-/ %p Find me in app/views/messages/index.html.haml
