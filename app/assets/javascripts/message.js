@@ -33,10 +33,10 @@ $(function() {
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html)
-      $('.form__message').val('')
+      $('#new_message')[0].reset();
       $('.form__submit').attr('disabled', false);
     })
-    .fail(function(){
+    .fail(function(){s
       alert('error');
     })
   })
