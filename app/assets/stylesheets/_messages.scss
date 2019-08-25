@@ -21,6 +21,11 @@
     color: $white;
     float: left;
 
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+
     .side-header { 
       height: 100px;
       background: #253141;
@@ -43,6 +48,7 @@
           float: right;
 
           &__new-group {
+            color: $white;
             margin-left: 0.3rem;
           }
           &__edit-user {
@@ -55,6 +61,7 @@
       height: calc(100vh - 100px);
       background: #2f3e51;
       padding: 20px 20px 0;
+      overflow: scroll;
 
       .group {
         margin-bottom: 40px;

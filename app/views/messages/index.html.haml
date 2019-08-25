@@ -8,8 +8,11 @@
         %ul.main-header__left-box__member-list 
           Member：
           %li.main-header__left-box__member-list__member 
-            = @group.users.name #仮置き
-      .main-header__edit-btn Edit
+            - @group.users.each do |user|
+              = user.name
+      .main-header__edit-btn 
+        = link_to edit_group_path @group do
+          Edit
     .messages
       = render partial: 'message', collection: @messages
     .form
