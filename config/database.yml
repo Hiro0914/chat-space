@@ -15,6 +15,7 @@ default: &default
   pool: 5
   username: root
   password:
+  # 以下の設定が優先される。
   socket: /tmp/mysql.sock
 
 development:
