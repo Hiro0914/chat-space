@@ -14,6 +14,10 @@ module ChatSpace
       g.helper false
       g.test_framework false
     end
+    # 表示を日本時間に直す
+    config.time_zone = 'Tokyo'
+    # DBへの保存も日本時間とする
+    config.active_record.default_timezone = :local
     config.i18n.default_locale = :ja
   end
 end

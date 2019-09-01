@@ -1,4 +1,5 @@
-.messages__box 
+-#カスタムデータ属性を付与
+.messages__box{"data-message-id": "#{message.id}"}
   .messages__upper-info
     .messages__upper-info__talker
       = message.user.name
