@@ -10,7 +10,7 @@
           %li.main-header__left-box__member-list__member 
             - @group.users.each do |user|
               = user.name
-      .main-header__edit-btn 
+      .main-header__edit-btn{"data-turbolinks": "false"}
         = link_to edit_group_path @group do
           Edit
     .messages
